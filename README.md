@@ -5,6 +5,6 @@ Cytoscape on AngularJS
 ```{r, engine='bash', count_lines}
 git clone https://github.com/0xNacho/cytoscape-directive-angularjs/
 bower install
-python -m SimpleHTTPServer 88
+python -m SimpleHTTPServer 8888
 ```
 Open your browser on http://localhost:8888
