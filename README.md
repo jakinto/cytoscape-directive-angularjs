@@ -1,9 +1,9 @@
 # cytoscape-directive-angularjs
 Cytoscape on AngularJS
 
-##How tu run
+##How to run
 ```{r, engine='bash', count_lines}
-git clone https://github.com/0xNacho/cytoscape-directive-angularjs/
+git clone https://github.com/jakinto/cytoscape-directive-angularjs
 bower install
 python -m SimpleHTTPServer 8888
 ```
