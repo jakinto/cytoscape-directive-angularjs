@@ -1,0 +1,28 @@
+{
+  "name": "AngularJS directive for Cytoscape.js",
+  "authors": [
+    "Jakinto & 0xNacho"
+  ],
+  "description": "An AngularJS directive for Cytoscape JS library",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "angularjs",
+    "directive",
+    "cytoscape",
+    "graphs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "cytoscape": "2.4.9"
+  }
+}
