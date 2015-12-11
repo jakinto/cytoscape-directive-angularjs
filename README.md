@@ -10,6 +10,6 @@ python -m SimpleHTTPServer 8888
 Open your browser on http://localhost:8888
 
 
-##Contrubutor
+##Contributors
 
 * [0xNacho](http://github.com/0xNacho)
