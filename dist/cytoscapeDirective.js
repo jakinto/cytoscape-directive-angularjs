@@ -108,9 +108,9 @@ angular.module('app').directive(
                         }
                       });
                       // Navigator
-                      cy.navigator();
-                      $document.find('.cytoscape-navigator').appendTo(
-                              '#cytoscape-navigator-container');
+                      //cy.navigator();
+                      //$document.find('.cytoscape-navigator').appendTo(
+                       //       '#cytoscape-navigator-container');
                       // On complete
                       scope.onComplete({
                         graph: cy,
