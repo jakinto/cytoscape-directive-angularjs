@@ -12,5 +12,4 @@ Open your browser on http://localhost:8888
 
 ##Contrubutor
 
-* (0xNacho)[http://github.com/0xNacho]
-]
+* [0xNacho](http://github.com/0xNacho)
