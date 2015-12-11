@@ -23,6 +23,10 @@
     "tests"
   ],
   "dependencies": {
-    "cytoscape": "2.4.9"
+    "cytoscape": "2.4.9",
+    "cytoscape.js-navigator": "~1.0.1",
+    "angular": "angularjs#~1.4.8",
+    "jquery": "~2.1.4",
+    "cytoscape-springy": "~1.1.0"
   }
 }
