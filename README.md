@@ -7,7 +7,7 @@ git clone https://github.com/jakinto/cytoscape-directive-angularjs
 bower install
 python -m SimpleHTTPServer 8888
 ```
-Open your browser on http://localhost:8888
+Open your browser on http://localhost:8888/examples/basic.html
 
 
 ##Contributors
