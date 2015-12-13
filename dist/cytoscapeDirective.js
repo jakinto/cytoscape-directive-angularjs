@@ -1,7 +1,7 @@
 angular.module('app').directive(
     'cytoscape',
 
-    function($document, $timeout) {
+    function($timeout) {
         return {
             restrict: 'E',
             template: '<div id="cy"></div>',
