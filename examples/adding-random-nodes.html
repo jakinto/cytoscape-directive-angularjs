@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8">
+
+  <title>AngularJS directive for CytoscapeJS</title>
+  <meta name="description" content="An AngularJS directive for Cytoscape JS library">
+  <meta name="author" content="Jakinto">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.css">
+  <style>
+     #cy {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+</style>
+</head>
+<body data-ng-controller="CytoscapeController">
+	<h3>Add random nodes every 3 seconds</h3>
+	<cytoscape elements="data" layout="layout" styles="styles" on-complete="poorFunction"></cytoscape>
+
+
+
+	<!--JS Scripts-->
+	<script src="../public/lib/angular/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('CytoscapeController', function($scope, $interval){
+			$scope.counter=0;
+			$scope.data = {
+					   nodes: [
+					     { data: { id: 'desktop', name: 'Cytoscape', href: 'http://cytoscape.org' } },
+					     { data: { id: 'js', name: 'Cytoscape.js', href: 'http://js.cytoscape.org' } }
+					   ],
+					   edges: [
+					     { data: { source: 'desktop', target: 'js' } }
+					   ]
+					 };
+			$scope.layout = {
+						 "name": "springy",
+						 "damping": 0.3,
+						 "repulsion": 2000
+						};
+			$scope.styles = [{
+				   "selector": "node",
+				   "css": {
+				       "content": "data(name)"
+				   }
+				}];
+			$scope.poorFunction = function(e){
+				console.log('Completed');
+			};
+
+			$scope.sayHello = function(){
+				alert('hey nigas!!!!. we are here, no matter where. I feel like a fucking superstart, this night is gonna be EPIC. Please, check your credit card before arriving. :)')
+			};
+
+			$interval(function(){
+				$scope.data.nodes.push([{id: 'test'+(++$scope.counter), name:'test'+($scope.counter), href:'http://google.es'}]);
+				console.log('adding node...');6g6hg6
+
+			}, 3000);
+		});
+	</script>
+	<script src="../public/lib/jquery/dist/jquery.min.js"></script>
+	<script src="../public/lib/cytoscape/dist/cytoscape.min.js"></script>
+	<script src="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.js"></script>
+	<script src="../public/lib/cytoscape-springy/springy.js"></script>
+	<script src="../public/lib/cytoscape-springy/cytoscape-springy.js"></script>
+	<script src="../dist/cytoscapeDirective.js"></script>
+</body>
+</html>
