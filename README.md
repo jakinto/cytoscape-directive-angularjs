@@ -1,4 +1,4 @@
-# cytoscape-directive-angularjs
+# cytoscape-directive-angularjs [![Build Status](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs.svg)](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs)
 Cytoscape on AngularJS
 
 ##How tu run
