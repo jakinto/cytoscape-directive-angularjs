@@ -27,8 +27,10 @@
   "homepage": "https://github.com/0xNacho/cytoscape-directive-angularjs",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-qunit": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.4.1",
-    "grunt-open": "^0.2.3"
+    "grunt-open": "^0.2.3",
+    "phantomjs": "^1.9.19"
   }
 }
