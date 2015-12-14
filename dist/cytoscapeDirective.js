@@ -1,6 +1,5 @@
 angular.module('app').directive(
     'cytoscape',
-
     function($timeout) {
         return {
             restrict: 'E',
