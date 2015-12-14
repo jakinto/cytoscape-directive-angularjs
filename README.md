@@ -1,7 +1,7 @@
 # cytoscape-directive-angularjs [![Build Status](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs.svg)](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs)
 Cytoscape on AngularJS
 
-##How tu run
+##Getting started
 ```{r, engine='bash', count_lines}
 git clone https://github.com/0xNacho/cytoscape-directive-angularjs/
 bower install
