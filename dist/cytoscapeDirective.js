@@ -98,7 +98,7 @@ angular.module('app').directive(
                           var doHighlight = function(i, node) {
                             var currentName = node.data().name.toLowerCase()
                                     .trim();
-                            if (currentName.indexOf(name) > -1)
+                            if (currentName.indexOf(cleanName) > -1)
                               node.removeClass('searched');
                           };
                           cy.nodes().each(doHighlight);
