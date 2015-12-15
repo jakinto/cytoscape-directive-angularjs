@@ -16,11 +16,24 @@
            left: 0;
            top: 0;
          }
+         #cytoscape-navigator-container {
+           position: fixed;
+           border: 1px solid #000;
+           background: #fff;
+           z-index: 99999;
+           width: 300px;
+           height: 300px;
+           top: 0;
+           right: 0;
+           overflow: hidden;
+         }
       </style>
       <link rel="stylesheet" type="text/css" href="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.css">
    </head>
    <body data-ng-controller="CytoscapeController">
-      <cytoscape elements="data" layout="layout" styles="styles"></cytoscape>
+      <cytoscape elements="data" layout="layout" styles="styles" navigator-container-id="cytoscape-navigator-container" 
+         context-menu-commands="contextMenu"></cytoscape>
+      <div id="cytoscape-navigator-container"></div>
       <!--JS Scripts-->
       <script src="../public/lib/angular/angular.min.js"></script>
       <script type="text/javascript">
