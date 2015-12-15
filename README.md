@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-# cytoscape-directive-angularjs [![Build Status](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs.svg)](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs)
-Cytoscape on AngularJS
-
-##Getting started
-=======
 # cytoscape-directive-angularjs
 
 An AngularJS directive for Cytoscape JS library
 
 ##How to run
->>>>>>> jakinto/master
 ```{r, engine='bash', count_lines}
 git clone https://github.com/jakinto/cytoscape-directive-angularjs
 bower install
