@@ -12,15 +12,15 @@ Open your browser on [http://localhost:8888/examples/basic.html](http://localhos
 
 ##Attributes
 #####elements
-List of nodes and egdes to start with. Any modification of this attribute will cause the recreation of the graph. This attribute is mandatory.
+List of nodes and egdes to start with. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
 #####styles
-Stylesheet for the graph. Any modification of this attribute will cause the recreation of the graph. This attribute is mandatory.
+Stylesheet for the graph. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
 #####layout
-Graph layout algorithm. Any modification of this attribute will cause the recreation of the graph. This attribute is mandatory.
+Graph layout algorithm. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
 #####selected-elements
 List of current selected elements. You should $watch this attribute to work with it. This attribute is optional.
 #####highlight-by-name
-Attribute that contains the name of the elements to highlight. This attribute is optional.
+Attribute that contains the name of the highlighted elements. This attribute is optional.
 #####on-complete
 Function that is called when the graph creation finalizes. This attribute is optional.
 #####on-change
@@ -28,7 +28,9 @@ Function that is called each time the graph changes its elements. This attribute
 #####navigator-container-id
 HTML element id of the graph navigator plugin (https://github.com/cytoscape/cytoscape.js-navigator). This attribute is optional.
 #####context-menu-commands
-Object that represents the commands of the context menu plugin (https://github.com/cytoscape/cytoscape.js-cxtmenu). This attribute is optional. This object looks like:
+List of commands of the context menu plugin (https://github.com/cytoscape/cytoscape.js-cxtmenu). This attribute is optional. 
+
+Example of commands:
 
 ```{r, engine='bash', count_lines}
   [{
@@ -43,6 +45,7 @@ Object that represents the commands of the context menu plugin (https://github.c
   }, {
       content: 'Log date',
       select: function(element) {
+          // Do stuff here
           console.log(new Date());
       },
   }]
