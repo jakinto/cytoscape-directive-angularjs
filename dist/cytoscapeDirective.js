@@ -10,12 +10,11 @@ angular.module('app').directive(
               styles: '=',
               layout: '=',
               selectedElements: '=',
-              addElements: '=',
-              deleteElements: '=',
               highlightByName: '=',
               onComplete: '=',
               onChange: '=',
-              navigatorContainerId: '@'
+              navigatorContainerId: '@',
+              contextMenuCommands: '='
             },
             link: function(scope, element, attributes, controller) {
               scope.$watchGroup(['elements', 'styles', 'layout'], function(
@@ -71,25 +70,26 @@ angular.module('app').directive(
                         }
                       });
                       // Add elements
-                      scope.$watch('addElements', function(addElements) {
-                        if (addElements) {
-                          var addedElements = cy.add(addElements);
-                          runLayout(addedElements);
-                          scope.onChange(cy);
-                        }
+                      scope.$on('cytoscapeAddElements', function(event, data) {
+                        var addElements = data.elements;
+                        var addedElements = cy.add(addElements);
+                        runLayout(addedElements);
+                        scope.onChange(cy, data.forceApply);
                       });
                       // Delete elements
-                      scope.$watch('deleteElements', function(deleteElements) {
-                        if (deleteElements) {
-                          try {
-                            cy.remove(deleteElements);
-                          } catch (exception) {
-                            for ( var i in deleteElements)
-                              cy.remove(cy.$('#' + deleteElements[i].data.id));
-                          }
-                          scope.onChange(cy);
-                        }
-                      });
+                      scope.$on('cytoscapeDeleteElements',
+                              function(event, data) {
+                                var deleteElements = data.elements;
+                                try {
+                                  cy.remove(deleteElements);
+                                } catch (exception) {
+                                  for ( var i in deleteElements) {
+                                    cy.remove(cy.$('#'
+                                            + deleteElements[i].data.id));
+                                  }
+                                }
+                                scope.onChange(cy, data.forceApply);
+                              });
                       // Filter nodes by name
                       scope.$watch('highlightByName', function(name) {
                         cy.elements().addClass('searched');
@@ -111,6 +111,16 @@ angular.module('app').directive(
                         cy.navigator({
                           container: document
                                   .getElementById(scope.navigatorContainerId)
+                        });
+                      }
+                      // Context menu
+                      if (scope.contextMenuCommands) {
+                        cy.cxtmenu({
+                          menuRadius: 75,
+                          indicatorSize: 17,
+                          activePadding: 10,
+                          selector: 'node',
+                          commands: scope.contextMenuCommands
                         });
                       }
                       // On complete
