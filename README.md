@@ -53,7 +53,7 @@ Example of commands:
 ##Events
 #####cytoscapeAddElements
 Event you should broadcast if you want to add elements to the graph. 
-* **elements:** Elements to add to graph
+* **elements:** Elements to add to graph.
 * **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
 
 Example of use:
@@ -75,7 +75,7 @@ Example of use:
 ```
 #####cytoscapeDeleteElements
 Event you should broadcast if you want to remove elements from the graph. 
-* **elements:** Elements to remove from the graph
+* **elements:** Elements to remove from the graph.
 * **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
 
 Example of use:
