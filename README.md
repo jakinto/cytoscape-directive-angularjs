@@ -49,7 +49,11 @@ Object that represents the commands of the context menu plugin (https://github.c
 ```
 ##Events
 #####cytoscapeAddElements
-Event to add elements to the graph. The parameter ```elements``` represents the elements to add to graph and ```forceApply``` allows you to execute $scope.$apply(). Example of use:
+Event you should broadcast if you want to add elements to the graph. 
+* **elements:**Elements to add to graph
+* **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
+
+Example of use:
 ```{r, engine='bash', count_lines}
   $scope.$broadcast('cytoscapeAddElements', {
       elements: [{
@@ -67,7 +71,9 @@ Event to add elements to the graph. The parameter ```elements``` represents the 
   });
 ```
 #####cytoscapeDeleteElements
-Event to remove elements from the graph. Same syntax as ```cytoscapeAddElements```.
+Event you should broadcast if you want to remove elements from the graph. 
+* **elements:**Elements to remove from the graph
+* **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
 
 ##Contributors
 * [0xNacho](http://github.com/0xNacho)
