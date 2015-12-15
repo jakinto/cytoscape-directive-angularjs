@@ -1,66 +1,95 @@
 <!doctype html>
 <html lang="en" data-ng-app="app">
-<head>
-  <meta charset="utf-8">
-
-  <title>AngularJS directive for CytoscapeJS</title>
-  <meta name="description" content="An AngularJS directive for Cytoscape JS library">
-  <meta name="author" content="Jakinto">
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <link rel="stylesheet" type="text/css" href="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.css">
-  <style>
-     #cy {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		}
-</style>
-</head>
-<body data-ng-controller="CytoscapeController">
-
-	<cytoscape elements="data" layout="layout" styles="styles" on-complete="poorFunction"></cytoscape>
-
-
-
-	<!--JS Scripts-->
-	<script src="../public/lib/angular/angular.min.js"></script>
-	<script type="text/javascript">
-		var app = angular.module('app', []);
-		app.controller('CytoscapeController', function($scope){
-			$scope.data = {
-					   nodes: [
-					     { data: { id: 'desktop', name: 'Cytoscape', href: 'http://cytoscape.org' } },
-					     { data: { id: 'js', name: 'Cytoscape.js', href: 'http://js.cytoscape.org' } }
-					   ],
-					   edges: [
-					     { data: { source: 'desktop', target: 'js' } }
-					   ]
-					 };
-			$scope.layout = {
-						 "name": "springy",
-						 "damping": 0.3,
-						 "repulsion": 2000
-						};
-			$scope.styles = [{
-				   "selector": "node",
-				   "css": {
-				       "content": "data(name)"
-				   }
-				}];
-			$scope.poorFunction = function(e){
-				console.log('Completed');
-			};
-		});
-	</script>
-	<script src="../public/lib/jquery/dist/jquery.min.js"></script>
-	<script src="../public/lib/cytoscape/dist/cytoscape.min.js"></script>
-	<script src="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.js"></script>
-	<script src="../public/lib/cytoscape-springy/springy.js"></script>
-	<script src="../public/lib/cytoscape-springy/cytoscape-springy.js"></script>
-	<script src="../dist/cytoscapeDirective.js"></script>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <title>AngularJS directive for CytoscapeJS</title>
+      <meta name="description" content="An AngularJS directive for Cytoscape JS library">
+      <meta name="author" content="Jakinto">
+      <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <style type="text/css">
+         #cy {
+           height: 100%;
+           width: 100%;
+           position: absolute;
+           left: 0;
+           top: 0;
+         }
+         #cytoscape-navigator-container {
+           position: fixed;
+           border: 1px solid #000;
+           background: #fff;
+           z-index: 99999;
+           width: 300px;
+           height: 300px;
+           top: 0;
+           right: 0;
+           overflow: hidden;
+         }
+      </style>
+      <link rel="stylesheet" type="text/css" href="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.css">
+   </head>
+   <body data-ng-controller="CytoscapeController">
+      <cytoscape elements="data" layout="layout" styles="styles" navigator-container-id="cytoscape-navigator-container" 
+         context-menu-commands="contextMenu"></cytoscape>
+      <div id="cytoscape-navigator-container"></div>
+      <!--JS Scripts-->
+      <script src="../public/lib/angular/angular.min.js"></script>
+      <script type="text/javascript">
+         var app = angular.module('app', []);
+         app.controller('CytoscapeController', function($scope) {
+             $scope.data = {
+                 nodes: [{
+                     data: {
+                         id: '1',
+                         name: 'Node1'
+                     }
+                 }, {
+                     data: {
+                         id: '2',
+                         name: 'Node2'
+                     }
+                 }],
+                 edges: [{
+                     data: {
+                         source: '1',
+                         target: '2'
+                     }
+                 }]
+             };
+             $scope.layout = {
+                 "name": "springy"
+             };
+             $scope.styles = [{
+                 "selector": "node",
+                 "css": {
+                     "content": "data(name)"
+                 }
+             }];
+             $scope.contextMenu = [{
+                     content: 'Edit',
+                     disabled: true
+                   }, {
+                     content: 'Mark',
+                     disabled: true
+                   }, {
+                     content: 'Remove',
+                     disabled: true
+                   }, {
+                     content: 'Log date',
+                     select: function(element) {
+                       console.log(new Date());
+                     },
+                   }];
+         });
+      </script>
+      <script src="../public/lib/jquery/dist/jquery.min.js"></script>
+      <script src="../public/lib/cytoscape/dist/cytoscape.min.js"></script>
+      <script src="../public/lib/cytoscape.js-navigator/cytoscape.js-navigator.js"></script>
+      <script src="../public/lib/cytoscape-cxtmenu/cytoscape-cxtmenu.js"></script>
+      <script src="../public/lib/cytoscape-springy/springy.js"></script>
+      <script src="../public/lib/cytoscape-springy/cytoscape-springy.js"></script>
+      <script src="../dist/cytoscapeDirective.js"></script>
+   </body>
 </html>
