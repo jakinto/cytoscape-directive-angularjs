@@ -67,7 +67,7 @@ Event to add elements to the graph. The parameter ```elements``` represents the 
   });
 ```
 #####cytoscapeDeleteElements
-Event to remove elements from the graph. Same sintax as ```cytoscapeAddElements```.
+Event to remove elements from the graph. Same syntax as ```cytoscapeAddElements```.
 
 ##Contributors
 * [0xNacho](http://github.com/0xNacho)
