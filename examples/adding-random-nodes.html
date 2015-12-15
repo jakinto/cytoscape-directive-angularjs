@@ -21,10 +21,8 @@
 </style>
 </head>
 <body data-ng-controller="CytoscapeController">
-	<h3>Add random nodes every 3 seconds</h3>
+	<button data-ng-click="newNode()">New Random Node</h3>
 	<cytoscape elements="data" layout="layout" styles="styles" on-complete="poorFunction"></cytoscape>
-
-
 
 	<!--JS Scripts-->
 	<script src="../public/lib/angular/angular.min.js"></script>
@@ -56,15 +54,6 @@
 				console.log('Completed');
 			};
 
-			$scope.sayHello = function(){
-				alert('hey nigas!!!!. we are here, no matter where. I feel like a fucking superstart, this night is gonna be EPIC. Please, check your credit card before arriving. :)')
-			};
-
-			$interval(function(){
-				$scope.data.nodes.push([{id: 'test'+(++$scope.counter), name:'test'+($scope.counter), href:'http://google.es'}]);
-				console.log('adding node...');6g6hg6
-
-			}, 3000);
 		});
 	</script>
 	<script src="../public/lib/jquery/dist/jquery.min.js"></script>
