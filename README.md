@@ -19,18 +19,55 @@ Stylesheet for the graph. Any modification of this attribute will cause the recr
 Graph layout algorithm. Any modification of this attribute will cause the recreation of the graph. This attribute is mandatory.
 #####selected-elements
 List of current selected elements. You should $watch this attribute to work with it. This attribute is optional.
-#####add-elements
-Elements to add to the graph. This attribute is optional.
-#####delete-elements
-Elements to remove from the graph. This attribute is optional.
 #####highlight-by-name
-Name of the elements to highlight. This attribute is optional.
+Attribute that contains the name of the elements to highlight. This attribute is optional.
 #####on-complete
 Function that is called when the graph creation finalizes. This attribute is optional.
 #####on-change
 Function that is called each time the graph changes its elements. This attribute is optional.
 #####navigator-container-id
-HTML element id of the graph navigator. This attribute is optional.
+HTML element id of the graph navigator plugin (https://github.com/cytoscape/cytoscape.js-navigator). This attribute is optional.
+#####context-menu-commands
+Object that represents the commands of the context menu plugin (https://github.com/cytoscape/cytoscape.js-cxtmenu). This attribute is optional. This object looks like:
+
+```{r, engine='bash', count_lines}
+  [{
+      content: 'Edit',
+      disabled: true
+  }, {
+      content: 'Mark',
+      disabled: true
+  }, {
+      content: 'Remove',
+      disabled: true
+  }, {
+      content: 'Log date',
+      select: function(element) {
+          console.log(new Date());
+      },
+  }]
+```
+##Events
+#####cytoscapeAddElements
+Event to add elements to the graph. The parameter ```elements``` represents the elements to add to graph and ```forceApply``` allows you to execute $scope.$apply(). Example of use:
+```{r, engine='bash', count_lines}
+  $scope.$broadcast('cytoscapeAddElements', {
+      elements: [{
+          data: {
+              id: '1',
+              name: 'Node1'
+          }
+      }, {
+          data: {
+              id: '2',
+              name: 'Node2'
+          }
+      }],
+      forceApply: false
+  });
+```
+#####cytoscapeDeleteElements
+Event to remove elements from the graph. Same sintax as ```cytoscapeAddElements```.
 
 ##Contributors
 * [0xNacho](http://github.com/0xNacho)
