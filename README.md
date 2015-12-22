@@ -1,4 +1,4 @@
-# cytoscape-directive-angularjs[![Build Status](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs.svg?branch=master)](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs)
+# cytoscape-directive-angularjs [![Build Status](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs.svg?branch=master)](https://travis-ci.org/0xNacho/cytoscape-directive-angularjs)
 
 An AngularJS directive for Cytoscape JS library
 
