@@ -2,7 +2,7 @@
 
 An AngularJS directive for Cytoscape JS library
 
-##How to run
+## How to run
 ```{r, engine='bash', count_lines}
 git clone https://github.com/jakinto/cytoscape-directive-angularjs
 bower install
@@ -10,24 +10,24 @@ python -m SimpleHTTPServer 8888
 ```
 Open your browser on [http://localhost:8888/examples/basic.html](http://localhost:8888/examples/basic.html)
 
-##Attributes
-#####elements
+## Attributes
+##### elements
 List of nodes and egdes to start with. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
-#####styles
+##### styles
 Stylesheet for the graph. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
-#####layout
+##### layout
 Graph layout algorithm. Any modification of this attribute will cause in the recreation of the graph. This attribute is mandatory.
-#####selected-elements
+##### selected-elements
 List of current selected elements. You should $watch this attribute to work with it. This attribute is optional.
-#####highlight-by-name
+##### highlight-by-name
 Attribute that contains the name of the highlighted elements. This attribute is optional.
-#####on-complete
+##### on-complete
 Function that is called when the graph creation finalizes. This attribute is optional.
-#####on-change
+##### on-change
 Function that is called each time the graph changes its elements. This attribute is optional.
-#####navigator-container-id
+##### navigator-container-id
 HTML element id of the graph navigator plugin (https://github.com/cytoscape/cytoscape.js-navigator). This attribute is optional.
-#####context-menu-commands
+##### context-menu-commands
 List of commands of the context menu plugin (https://github.com/cytoscape/cytoscape.js-cxtmenu). This attribute is optional. 
 
 Example of commands:
@@ -50,8 +50,8 @@ Example of commands:
       },
   }]
 ```
-##Events
-#####cytoscapeAddElements
+## Events
+##### cytoscapeAddElements
 Event you should broadcast if you want to add elements to the graph. 
 * **elements:** Elements to add to graph.
 * **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
@@ -73,7 +73,7 @@ Example of use:
       forceApply: false
   });
 ```
-#####cytoscapeDeleteElements
+##### cytoscapeDeleteElements
 Event you should broadcast if you want to remove elements from the graph. 
 * **elements:** Elements to remove from the graph.
 * **forceApply:**```true``` to execute ```$scope.$apply()``` at the end.
@@ -96,5 +96,5 @@ Example of use:
   });
 ```
 
-##Contributors
+## Contributors
 * [0xNacho](http://github.com/0xNacho)
